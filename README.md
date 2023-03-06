@@ -6,6 +6,7 @@ MLAGA is an open source, multilingual audiobook generator build to demonstrate t
 
 
 Runtime:
+
     - `stage_00.py`:    Centralize dependencies
     - `stage_01.py`:    Download YouTube, covert to audio, upload to s3 bucket.
     - `stage_02.py`:    Start AWS Transcribe job, upload to s3 bucket.
