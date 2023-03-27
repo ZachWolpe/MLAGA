@@ -1,7 +1,7 @@
 # MLAGA: Multi-Lingual Audiobook Generator (with AI)
 -----
 
-MLAGA converts youtube videos to multilingual audiobooks. Learn language on the go while still consuming the same content you love.
+_*MLAGA converts youtube videos to multilingual audiobooks. Learn language on the go while still consuming the same content you love.*_
 
 It is an open source, multilingual audiobook generator built to demonstrate the power & ease of integrating AI APIs into your products.
 
@@ -24,25 +24,15 @@ The pipeline is designed to be modular, fully automated & scalable. It is built 
 9. Update bucket, trigger & lambda names in all files.
 
 
-## APIs
-
-The implementation relies on multiple `AWS` APIs:
-
-- `aws s3`              - [Storage.](https://aws.amazon.com/s3/)
-- `aws Lambda`          - [Serverless computing.](https://aws.amazon.com/lambda/)
-- `aws Event Bridge`    - [Triggering Lambdas.](https://aws.amazon.com/eventbridge/)
-- `aws Transcribe`      - [Audio to text.](https://aws.amazon.com/transcribe/)
-- `aws Translate`       - [Text to text.](https://aws.amazon.com/translate/)
-- `aws Polly`           - [Text to speech.](https://aws.amazon.com/polly/)
-
-
 ## Running the pipeline
+
+Once your AWS is configured correctly, you only need to run _stage 1_ locally & _stage 2_ & _3_ will be triggered automatically.
 
 ### Stage 1 - Youtube to Audio (s3)
 
-Run `Stage 1` locally using the built in `cli`. Provide the required arguments (example available in _`default_params.yaml`_). Done :).
+Run `Stage 1` locally using the built in `cli`. Provide the required arguments (example available in _`default_params.yaml`_).
 
-Example:
+Usage:
 
 ```
 clear; python stage_01.py \
@@ -85,6 +75,19 @@ Voila! Vous disposez d'un générateur de livres audio multilingues! 🎉🎉�
 - Setup a `requirements.txt` file to store all dependencies.
 - Tuning & model extention should be used to improve the quality of the generated audio.
 - A UI should be added (perhaps using `AWS Amplify`) to interface the product without code/online.
+
+
+## APIs
+
+The implementation relies on multiple `AWS` APIs:
+
+- `aws s3`              - [Storage.](https://aws.amazon.com/s3/)
+- `aws Lambda`          - [Serverless computing.](https://aws.amazon.com/lambda/)
+- `aws Event Bridge`    - [Triggering Lambdas.](https://aws.amazon.com/eventbridge/)
+- `aws Transcribe`      - [Audio to text.](https://aws.amazon.com/transcribe/)
+- `aws Translate`       - [Text to text.](https://aws.amazon.com/translate/)
+- `aws Polly`           - [Text to speech.](https://aws.amazon.com/polly/)
+
 
 ### Additional notes
 
