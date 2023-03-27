@@ -5,7 +5,7 @@ MLAGA is an open source, multilingual audiobook generator built to demonstrate t
 
 A detailed desrciption is available on [Medium](link!!!!).
 
-![Pipeline architecture](./depedencies/architecture.png)
+![Pipeline architecture](https://github.com/ZachWolpe/MLAGA/blob/main/dependencies/architecture.png)
 
 The pipeline is designed to be modular, & fully automated.
 
