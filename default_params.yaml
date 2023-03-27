@@ -1,0 +1,23 @@
+
+
+
+# ================================================================================================================================================
+# stage 01
+# ================================================================================================================================================
+arguments:
+  exe:          '.FLAC'           # -e:   The desired audio file extention.
+  yt_url:       'youtube url'     # -y:   YouTube video URL.
+  bucket_name:  's3-bucket'       # -b:   S3 bucket location to store audiofile.
+  path:         './temp_store'    # -p:   Path to (temperarily) save audio file.
+  cached_audio:                   # -c:   If used, use file that is already downloaded in path.
+  test:
+
+# example (terminal) execution:
+#     clear; python stage_01.py \
+#         -y "https://www.youtube.com/shorts/lqKOfMSBv74" \
+#         -e ".FLAC" \
+#         -b "francaise-moi-store-raw-audio/input/" \
+#         -p "./temp_store/" \
+#         -c
+# ================================================================================================================================================
+

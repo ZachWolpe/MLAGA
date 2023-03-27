@@ -1,15 +1,15 @@
 # MLAGA: Multi-Lingual Audiobook Generator (with AI)
 -----
 
-MLAGA is an open source, multilingual audiobook generator built to demonstrate the power & ease of integrating AI into your products.
+MLAGA is an open source, multilingual audiobook generator built to demonstrate the power & ease of integrating AI APIs into your products.
 
-A detailed desrciption is available on [Medium](link!!!!).
+A "softer" explanation is available on my [Medium](https://medium.com/@zachcolinwolpe).
 
 ![Pipeline architecture](https://github.com/ZachWolpe/MLAGA/blob/main/dependencies/architecture.png)
 
-The pipeline is designed to be modular, & fully automated.
+The pipeline is designed to be modular, fully automated & scalable. It is built using `Python` & `AWS` services.
 
----
+
 ## Getting Started
 
 1. Clone the repo, install the dependencies & setup an AWS account (including the `cli` setup).
@@ -24,7 +24,6 @@ The pipeline is designed to be modular, & fully automated.
 9. Update bucket, trigger & lambda names in all files :).
 
 
----
 ## Running the pipeline
 
 ### Stage 1 - Youtube to Audio (s3)
@@ -42,28 +41,41 @@ clear; python stage_01.py \
 
 This will:
 
-    - Download the youtube video.
-    - Convert the video to audio.
-    - Upload the audio to `$[S3/BUCKET-1]`.
+- Download the youtube video.
+- Convert the video to audio.
+- Upload the audio to `$[S3/BUCKET-1]`.
 
 
 ### Stage 2 - Transcribe Audio
 
-    - `$[AWS-LAMBDA-1]` will be triggered _automatically_ when data arrives in `$[S3/BUCKET-1]` (Triggered by _AWS Event Bridge_).
-    - `$[AWS-LAMBDA-1]` will convert the audio to text.
-    - `$[AWS-LAMBDA-1]` will upload the text to `$[S3/BUCKET-2]`.
+- `$[AWS-LAMBDA-1]` will be triggered _automatically_ when data arrives in `$[S3/BUCKET-1]` (Triggered by _AWS Event Bridge_).
+- `$[AWS-LAMBDA-1]` will convert the audio to text.
+- `$[AWS-LAMBDA-1]` will upload the text to `$[S3/BUCKET-2]`.
 
 
 ### Stage 3 - Translate Text
 
-    - `$[AWS-LAMBDA-2]` will be triggered _automatically_ when data arrives in `$[S3-BUCKET-2]` (Triggered by _AWS Event Bridge_).
-    - `$[AWS-LAMBDA-2]` will
-        - Translate the text from English to French.
-        - Convert the text to speech.
-        - Upload the two audio files to `$[S3/BUCKET-3]`.
+- `$[AWS-LAMBDA-2]` will be triggered _automatically_ when data arrives in `$[S3-BUCKET-2]` (Triggered by _AWS Event Bridge_).
+- `$[AWS-LAMBDA-2]` will
+    - Translate the text from English to French.
+    - Convert the text to speech.
+    - Upload the two audio files to `$[S3/BUCKET-3]`.
 
 
 Voila! Vous disposez d'un générateur de livres audio multilingues! 🎉🎉🎉
+
+
+## Future work
+
+- Setup a `config.yaml` file to store all parameters.
+- Setup a `requirements.txt` file to store all dependencies.
+- Tuning & model extention should be used to improve the quality of the generated audio.
+- A UI should be added (perhaps using `AWS Amplify`) to interface the product without code/online.
+
+### Additional notes
+
+The `GCP - Google Cloud Platform` code is not used here, but is available as an alternative to `AWS`. The APIs are almost identical.
+
 
 ---
 ```
