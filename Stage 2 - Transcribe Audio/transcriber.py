@@ -1,6 +1,6 @@
 # --------------------------------------------------------------------------------
 # ================================================================================
-# File: stage_02
+# File: transcriber.py
 # 
 # Object:  
 #       - Start AWS Transcribe job.
@@ -13,7 +13,7 @@
 # --------------------------------------------------------------------------------
 # ================================================================================
 
-from stage_00 import *
+from dependencies import *
 
 
 def transcribe_file(job_name, file_uri, transcribe_client, MediaFormat, LanguageCode, MediaSampleRateHertz):
@@ -45,29 +45,3 @@ def transcribe_file(job_name, file_uri, transcribe_client, MediaFormat, Language
 def execute(job_name, file_uri, MediaFormat, LanguageCode, MediaSampleRateHertz):
     transcribe_client = boto3.client('transcribe')
     transcribe_file(job_name, file_uri, transcribe_client, MediaFormat, LanguageCode, MediaSampleRateHertz)
-
-
-
-if __name__ == '__main__':
-    
-    # argument parser --------------------++
-    
-    arguments = [
-        argument('job_name',                'n', True, f'AWS-Transcriber-{random.randint(-99999999,+99999999)}'),
-        argument('file_uri',                'f', True),
-        argument('MediaFormat',             'm', True, 'mp4'),
-        argument('LanguageCode',            'l', True, 'en-US'),
-        argument('MediaSampleRateHertz',    's', True, 44100),
-    ]
-
-    ah                      = argument_handlr(arguments)
-    job_name                = ah.args_dict['job_name']
-    file_uri                = ah.args_dict['file_uri']
-    MediaFormat             = ah.args_dict['MediaFormat']
-    LanguageCode            = ah.args_dict['LanguageCode']
-    MediaSampleRateHertz    = ah.args_dict['MediaSampleRateHertz']
-    ah.print_configuration()
-    # argument parser --------------------++
-    
-    execute(job_name, file_uri, MediaFormat, LanguageCode, MediaSampleRateHertz)
-
