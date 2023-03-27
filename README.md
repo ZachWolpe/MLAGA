@@ -3,8 +3,6 @@
 
 MLAGA is an open source, multilingual audiobook generator built to demonstrate the power & ease of integrating AI APIs into your products.
 
-A "softer" explanation is available on my [Medium](https://medium.com/@zachcolinwolpe).
-
 ![Pipeline architecture](https://github.com/ZachWolpe/MLAGA/blob/main/dependencies/architecture.png)
 
 The pipeline is designed to be modular, fully automated & scalable. It is built using `Python` & `AWS` services.
@@ -74,8 +72,8 @@ Voila! Vous disposez d'un générateur de livres audio multilingues! 🎉🎉�
 
 ### Additional notes
 
-The `GCP - Google Cloud Platform` code is not used here, but is available as an alternative to `AWS`. The APIs are almost identical.
-
+1. The `GCP - Google Cloud Platform` code is not used here, but is available as an alternative to `AWS`. The APIs are almost identical.
+2. A "softer" explanation is available on my [Medium](https://medium.com/@zachcolinwolpe).
 
 ---
 ```
