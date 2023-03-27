@@ -19,14 +19,28 @@ The pipeline is designed to be modular, fully automated & scalable. It is built 
 7. Note: _*layers*_ can be used to install packages on AWS Lambda. [AWS Lambda Layers.](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html).
 7. Setup Triggers using `AWS Event Bridge` to automatically trigger `$[AWS-LAMBDA-1]` & `$[AWS-LAMBDA-2]` when data arrives in `$[S3/BUCKET-1]` & `$[S3/BUCKET-2]` respectively.
 8. Activate `AWS Transcribe`, `AWS Translate` & `AWS Polly` services.
-9. Update bucket, trigger & lambda names in all files :).
+9. Update bucket, trigger & lambda names in all files.
+
+
+## APIs
+
+The implementation relies on multiple `AWS` APIs:
+
+- `aws s3`              - [Storage.](https://aws.amazon.com/s3/)
+- `aws Lambda`          - [Serverless computing.](https://aws.amazon.com/lambda/)
+- `aws Event Bridge`    - [Triggering Lambdas.](https://aws.amazon.com/eventbridge/)
+- `aws Transcribe`      - [Audio to text.](https://aws.amazon.com/transcribe/)
+- `aws Translate`       - [Text to text.](https://aws.amazon.com/translate/)
+- `aws Polly`           - [Text to speech.](https://aws.amazon.com/polly/)
 
 
 ## Running the pipeline
 
 ### Stage 1 - Youtube to Audio (s3)
 
-Run `Stage 1` locally using the built in `cli`. Provide the required arguments (example available in _`default_params.yaml`_). Example:
+Run `Stage 1` locally using the built in `cli`. Provide the required arguments (example available in _`default_params.yaml`_). Done :).
+
+Example:
 
 ```
 clear; python stage_01.py \
