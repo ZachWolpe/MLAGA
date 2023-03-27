@@ -1,7 +1,9 @@
 # MLAGA: Multi-Lingual Audiobook Generator (with AI)
 -----
 
-MLAGA is an open source, multilingual audiobook generator built to demonstrate the power & ease of integrating AI APIs into your products.
+MLAGA converts youtube videos to multilingual audiobooks. Learn language on the go while still consuming the same content you love.
+
+It is an open source, multilingual audiobook generator built to demonstrate the power & ease of integrating AI APIs into your products.
 
 ![Pipeline architecture](https://github.com/ZachWolpe/MLAGA/blob/main/dependencies/architecture.png)
 
