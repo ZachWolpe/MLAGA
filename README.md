@@ -33,7 +33,7 @@ The pipeline is designed to be modular, fully automated & scalable. It is built 
 
 ## Running the pipeline
 
-Once your AWS is configured correctly, you only need to run _stage 1_ locally & _stage 2_ & _3_ will be triggered automatically.
+Once your AWS account is configured, simply run _stage 1_ locally. _Stage 2_ & _3_ will be triggered automatically by `AWS Event Bridge`.
 
 ### Stage 1 - Youtube to Audio (s3)
 
@@ -47,7 +47,7 @@ clear; python stage_01.py \
     -e ".FLAC" \
     -b "$[S3/BUCKET-1]" \
     -p "./temp_store/" \
-    -c
+    # -c
 ```
 
 This will:
@@ -59,17 +59,17 @@ This will:
 
 ### Stage 2 - Transcribe Audio
 
-- `$[AWS-LAMBDA-1]` will be triggered _automatically_ when data arrives in `$[S3/BUCKET-1]` (Triggered by _AWS Event Bridge_).
-- `$[AWS-LAMBDA-1]` will convert the audio to text.
+- `$[AWS-LAMBDA-1]` will be automatically triggered when data arrives in `$[S3/BUCKET-1]` (Triggered by _AWS Event Bridge_).
+- `$[AWS-LAMBDA-1]` will convert the audio to text (_*STT*_).
 - `$[AWS-LAMBDA-1]` will upload the text to `$[S3/BUCKET-2]`.
 
 
 ### Stage 3 - Translate Text
 
-- `$[AWS-LAMBDA-2]` will be triggered _automatically_ when data arrives in `$[S3-BUCKET-2]` (Triggered by _AWS Event Bridge_).
+- `$[AWS-LAMBDA-2]` will be automatically triggered when data arrives in `$[S3-BUCKET-2]` (Triggered by _AWS Event Bridge_).
 - `$[AWS-LAMBDA-2]` will
-    - Translate the text from English to French.
-    - Convert the text to speech.
+    - Translate the text from English to French (_*Machine Translation*_).
+    - Convert the text to speech (_*TTS*_).
     - Upload the two audio files to `$[S3/BUCKET-3]`.
 
 
