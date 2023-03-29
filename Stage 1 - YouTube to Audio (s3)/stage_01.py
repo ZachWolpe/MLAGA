@@ -21,11 +21,11 @@ sys.path.append('../')
 from dependencies.dependencies import *
 
 
-def audio_in_cache(path='/', file='Apple-Proprietary-USB-C-Cables', exe=''):
-    pth = f'{path}{file}' + exe
+def audio_in_cache(path_to_cached_file='/', exe=''):
+    pth = f'{path_to_cached_file}' + exe
     return pth
  
-
+ 
 if __name__=='__main__':
     # argument handler --------------++
     arguments = [
@@ -51,11 +51,12 @@ if __name__=='__main__':
             print('Downloading YouTube audio file.')
             yt, fname = download_wav(yt_url, path=path, exe=exe, remove_spaces=True)
         except Exception as e:
+            print('FAILED to download & convert YouTube audio file.')
             print(e)
         filepath = path + fname + exe
     else:
         print('Using cached audio.')
-        filepath = audio_in_cache(path=path, exe=exe)
+        filepath = audio_in_cache(path_to_cached_file=path, exe=exe)
 
     # upload to bucket --------++
     persistence_manager_AWS.write_from_cli(
