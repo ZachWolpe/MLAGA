@@ -32,11 +32,14 @@ def download_wav(url, path='./', exe='.wav', remove_spaces=False):
     
     # save the file
     base, ext = os.path.splitext(out_file)
+
     if remove_spaces:
-        base = base.replace(' ','-')
-    new_file = base + exe
+        pth  = out_file.split('/')[-1]
+        bse  = out_file.split('/')[:-1]
+        base = pth.replace(' ','-')
+    new_file = '/'.join(bse) + '/' + base.split('.')[0] + exe 
     os.rename(out_file, new_file)
-  
+
     # result of success
-    print(yt.title + " has been successfully downloaded.")
+    print(f"Youtube video  \"{yt.title}\" has been successfully downloaded.")
     return yt, base.split('/')[-1]

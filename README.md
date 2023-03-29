@@ -1,7 +1,7 @@
 # MLAGA: Multi-Lingual Audiobook GenerAtor
 -----
 
-_*MLAGA converts youtube videos to multilingual audiobooks. Learn language on the go while still consuming the same content you love.*_
+_*MLAGA converts youtube videos to multilingual audiobooks. Learn a language on the go while still consuming the content you love.*_
 
 An open source, multilingual audiobook generator built to demonstrate the power & ease of integrating AI APIs into your products.
 

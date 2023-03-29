@@ -14,13 +14,13 @@
 # --------------------------------------------------------------------------------
 # ================================================================================
 
-from google.cloud        import translate_v2 as translate
-from google.cloud        import texttospeech
-from google.cloud        import storage
-from persistence_manager import *
-from youtube_downloader  import *
-from GCS_interface       import *
-from sys_args            import *
+from google.cloud                     import translate_v2 as translate
+from google.cloud                     import texttospeech
+from google.cloud                     import storage
+from dependencies.persistence_manager import *
+from dependencies.youtube_downloader  import *
+from dependencies.GCS_interface       import *
+from dependencies.sys_args            import *
 import subprocess
 import random
 import pickle
