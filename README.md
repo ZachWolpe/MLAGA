@@ -99,7 +99,7 @@ The implementation relies on multiple `AWS` APIs:
 ### Additional notes
 
 1. The `GCP - Google Cloud Platform` code is not used here, but is available as an alternative to `AWS`. The APIs are almost identical.
-2. A "softer" explanation is available on my [Medium](https://medium.com/@zachcolinwolpe).
+2. A "softer" explanation is available on my [Medium](https://zachcolinwolpe.medium.com/mlaga-multi-lingual-audiobook-generator-22ff35270965).
 
 ---
 ```
