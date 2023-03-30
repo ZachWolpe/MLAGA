@@ -15,8 +15,6 @@
 # ================================================================================
 
 
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
 # example documentation: https://docs.aws.amazon.com/translate/latest/dg/examples-python.html
  
 import boto3

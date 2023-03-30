@@ -44,13 +44,3 @@ class Polly_API:
             OutputS3BucketName  = OutputS3BucketName,
             OutputS3KeyPrefix   = OutputS3KeyPrefix
             )
-
-
-
-# notes:
-    # # polly_fr.TTS(Text=trans.response['TranslatedText'])
-    # print('response: \n', polly_fr.response)
-    # object_name = polly_fr.response['SynthesisTask']['OutputUri'] #returns entire S3 Path, need to index for key to create S3 Pre-Signed URL
-    # startIndex = object_name.find("InputAudio") 
-    # keyName = object_name[startIndex: len(object_name)]
-    # print(keyName)

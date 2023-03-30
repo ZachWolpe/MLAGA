@@ -1,30 +1,25 @@
-import json
-import boto3
-import os
+
+from test_to_speech import *
+from translate import *
 from urllib import *
 import urllib
+import boto3
+import json
+import os
 # notes to add packages: https://aws.amazon.com/premiumsupport/knowledge-center/lambda-import-module-error-python/#:~:text=This%20is%20because%20Lambda%20isn,Python%20inside%20the%20%2Fpython%20folder.
 
-from translate import *
-from test_to_speech import * 
 
 print('loading function: Transcription to S3 bucket')
-
-
-
 s3          = boto3.resource('s3')
 transcribe  = boto3.client('transcribe')
 
         
-
 def get_log_message(**kwargs):
     lines  = '\n\n=========================================================================================================\n'
     for k,v in kwargs.items():
         lines += f'\n        {k}: {v:<{13}}'
         lines += '\n\n=========================================================================================================\n\n'
     return lines
-
-
 
 def lambda_handler(event, context):
     BUCKET_NAME = 'my-aws-bucket-12'
